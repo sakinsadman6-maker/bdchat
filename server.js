@@ -17,6 +17,9 @@ const io     = new Server(server, {
 app.use(cors());
 app.use(express.json());
 
+// Favicon handler
+app.use('/favicon.ico', (req, res) => res.status(204).send());
+
 // Serve the frontend HTML
 app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
